@@ -97,5 +97,3 @@ class ThemeHelper {
     );
   }
 }
-
-class LoginFormStyle {}

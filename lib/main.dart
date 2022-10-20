@@ -1,9 +1,17 @@
+import 'package:amina_ex/app/ui/pages/app_locale_select.dart';
 import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart';
 
-import 'login/ui/widgets/splash_screen.dart';
-
-void main() {
-  runApp(const LoginUiApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await EasyLocalization.ensureInitialized();
+  runApp(
+    EasyLocalization(
+        supportedLocales: const [Locale('kk'), Locale('en'), Locale('ru')],
+        path: 'assets/translations',
+        fallbackLocale: const Locale('kk'),
+        child: const LoginUiApp()),
+  );
 }
 
 class LoginUiApp extends StatelessWidget {
@@ -12,12 +20,14 @@ class LoginUiApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Login UI',
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      debugShowCheckedModeBanner: false,
+      locale: context.locale,
       theme: ThemeData(
-        scaffoldBackgroundColor: Colors.grey.shade100,
-        primarySwatch: Colors.grey,
+        primarySwatch: Colors.blue,
       ),
-      home: const SplashScreen(title: 'Flutter Login UI'),
+      home: const AppLocalePage(),
     );
   }
 }

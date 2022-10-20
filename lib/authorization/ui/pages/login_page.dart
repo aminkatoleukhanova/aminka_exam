@@ -1,6 +1,8 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:amina_ex/components/style.dart';
+import '../../../translations/locale_keys.g.dart';
 import 'registration_page.dart';
 
 class LoginPage extends StatefulWidget {
@@ -23,9 +25,9 @@ class _LoginPageState extends State<LoginPage> {
         child: Column(
           children: [
             SizedBox(
-              child: const Center(
-                  child: Image(image: AssetImage("assets/uib2.png"))),
               height: _headerHeight,
+              child: const Center(
+                  child: Image(image: AssetImage("assets/images/uib2.png"))),
             ),
             SafeArea(
               child: Container(
@@ -33,15 +35,15 @@ class _LoginPageState extends State<LoginPage> {
                   margin: const EdgeInsets.fromLTRB(20, 10, 20, 10),
                   child: Column(
                     children: [
-                      const Text(
-                        'Welcome,dear!',
-                        style: TextStyle(
+                      Text(
+                        LocaleKeys.welcome.tr(),
+                        style: const TextStyle(
                             fontSize: 30, fontWeight: FontWeight.bold),
                       ),
-                      const Text(
-                        'Sign in',
-                        style:
-                            TextStyle(color: Color.fromARGB(255, 46, 45, 45)),
+                      Text(
+                        LocaleKeys.sign.tr(),
+                        style: const TextStyle(
+                            color: Color.fromARGB(255, 46, 45, 45)),
                       ),
                       const SizedBox(height: 30.0),
                       Form(
@@ -53,7 +55,8 @@ class _LoginPageState extends State<LoginPage> {
                                     ThemeHelper().inputBoxDecorationShaddow(),
                                 child: TextField(
                                   decoration: ThemeHelper().textInputDecoration(
-                                      'Barcode', 'Enter your Barcode'),
+                                      LocaleKeys.barcode.tr(),
+                                      LocaleKeys.enterbar.tr()),
                                 ),
                               ),
                               const SizedBox(height: 30.0),
@@ -63,7 +66,9 @@ class _LoginPageState extends State<LoginPage> {
                                 child: TextField(
                                   obscureText: true,
                                   decoration: ThemeHelper().textInputDecoration(
-                                      'Password', 'Enter your password'),
+                                    LocaleKeys.password.tr(),
+                                    LocaleKeys.enterpass.tr(),
+                                  ),
                                 ),
                               ),
                               const SizedBox(height: 15.0),
@@ -73,9 +78,9 @@ class _LoginPageState extends State<LoginPage> {
                                 alignment: Alignment.topRight,
                                 child: GestureDetector(
                                   onTap: () {},
-                                  child: const Text(
-                                    "Forgot your password?",
-                                    style: TextStyle(
+                                  child: Text(
+                                    LocaleKeys.forgot.tr(),
+                                    style: const TextStyle(
                                       color: Colors.black,
                                     ),
                                   ),
@@ -90,7 +95,7 @@ class _LoginPageState extends State<LoginPage> {
                                     padding: const EdgeInsets.fromLTRB(
                                         40, 10, 40, 10),
                                     child: Text(
-                                      'Sign In'.toUpperCase(),
+                                      LocaleKeys.sign.tr().toUpperCase(),
                                       style: const TextStyle(
                                           fontSize: 20,
                                           fontWeight: FontWeight.bold,
@@ -104,10 +109,11 @@ class _LoginPageState extends State<LoginPage> {
                                 margin:
                                     const EdgeInsets.fromLTRB(10, 20, 10, 20),
                                 child: Text.rich(TextSpan(children: [
-                                  const TextSpan(
-                                      text: "Don't have an account? "),
                                   TextSpan(
-                                    text: 'Create',
+                                    text: LocaleKeys.account.tr(),
+                                  ),
+                                  TextSpan(
+                                    text: LocaleKeys.create.tr(),
                                     recognizer: TapGestureRecognizer()
                                       ..onTap = () {
                                         Navigator.push(

@@ -1,7 +1,8 @@
 import 'dart:async';
 
-import 'package:amina_ex/authorization/ui/pages/login_page.dart';
 import 'package:flutter/material.dart';
+
+import '../pages/login_page.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key, required this.title}) : super(key: key);
@@ -27,7 +28,8 @@ class _SplashScreenState extends State<SplashScreen> {
 
     Timer(const Duration(milliseconds: 10), () {
       setState(() {
-        _isVisible = true;
+        _isVisible =
+            true; // Now it is showing fade effect and navigating to Login page
       });
     });
   }

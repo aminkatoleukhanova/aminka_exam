@@ -1,8 +1,11 @@
-import 'package:amina_ex/login/ui/pages/profile_page.dart';
+import 'package:amina_ex/authorization/ui/pages/profile_page.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:amina_ex/components/style.dart';
-import 'package:amina_ex/login/ui/pages/login_page.dart';
+import 'package:amina_ex/authorization/ui/pages/login_page.dart';
+
+import '../../../translations/locale_keys.g.dart';
 
 class RegistrationPage extends StatefulWidget {
   const RegistrationPage({Key? key}) : super(key: key);
@@ -81,7 +84,8 @@ class _RegistrationPageState extends State<RegistrationPage> {
                           decoration: ThemeHelper().inputBoxDecorationShaddow(),
                           child: TextFormField(
                             decoration: ThemeHelper().textInputDecoration(
-                                'First Name', 'Enter your first name'),
+                                LocaleKeys.first.tr(),
+                                LocaleKeys.enterfirst.tr()),
                           ),
                         ),
                         const SizedBox(
@@ -91,7 +95,8 @@ class _RegistrationPageState extends State<RegistrationPage> {
                           decoration: ThemeHelper().inputBoxDecorationShaddow(),
                           child: TextFormField(
                             decoration: ThemeHelper().textInputDecoration(
-                                'Last Name', 'Enter your last name'),
+                                LocaleKeys.last.tr(),
+                                LocaleKeys.enterlast.tr()),
                           ),
                         ),
                         const SizedBox(height: 20.0),
@@ -99,13 +104,14 @@ class _RegistrationPageState extends State<RegistrationPage> {
                           decoration: ThemeHelper().inputBoxDecorationShaddow(),
                           child: TextFormField(
                             decoration: ThemeHelper().textInputDecoration(
-                                "E-mail address", "Enter your email"),
+                                LocaleKeys.address.tr(),
+                                LocaleKeys.entermail.tr()),
                             keyboardType: TextInputType.emailAddress,
                             validator: (val) {
                               if (!(val!.isEmpty) &&
                                   !RegExp(r"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?)*$")
                                       .hasMatch(val)) {
-                                return "Enter a valid email address";
+                                return LocaleKeys.enteradd.tr();
                               }
                               return null;
                             },
@@ -116,12 +122,12 @@ class _RegistrationPageState extends State<RegistrationPage> {
                           decoration: ThemeHelper().inputBoxDecorationShaddow(),
                           child: TextFormField(
                             decoration: ThemeHelper().textInputDecoration(
-                                "Mobile Number", "7(XXX)XXX-XX-XX"),
+                                LocaleKeys.mobile.tr(), "7(XXX)XXX-XX-XX"),
                             keyboardType: TextInputType.phone,
                             validator: (val) {
                               if (!(val!.isEmpty) &&
                                   !RegExp(r"^(\d+)*$").hasMatch(val)) {
-                                return "Enter a valid phone number";
+                                return LocaleKeys.enternum.tr();
                               }
                               return null;
                             },
@@ -133,12 +139,13 @@ class _RegistrationPageState extends State<RegistrationPage> {
                           child: TextFormField(
                             obscureText: true,
                             decoration: ThemeHelper().textInputDecoration(
-                                "Password*", "Example:Aaxx77"),
+                                LocaleKeys.password.tr(),
+                                LocaleKeys.enterpass.tr()),
                             validator: (val) {
                               if (!(val!.isEmpty) &&
                                   !RegExp(r"^[a-zA-AaZz-zA-Z0-9]+$")
                                       .hasMatch(val)) {
-                                return "Please enter your password";
+                                return LocaleKeys.pleasepass.tr();
                               }
                               return null;
                             },
@@ -159,11 +166,11 @@ class _RegistrationPageState extends State<RegistrationPage> {
                                             state.didChange(value);
                                           });
                                         }),
-                                    const Text(
-                                      "I accept all terms and conditions.",
-                                      style: TextStyle(
-                                          color: const Color.fromARGB(
-                                              255, 87, 87, 87)),
+                                    Text(
+                                      LocaleKeys.conditions.tr(),
+                                      style: const TextStyle(
+                                          color:
+                                              Color.fromARGB(255, 87, 87, 87)),
                                     ),
                                   ],
                                 ),
@@ -183,7 +190,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                           },
                           validator: (value) {
                             if (!checkboxValue) {
-                              return 'You need to accept terms and conditions';
+                              return LocaleKeys.need.tr();
                             } else {
                               return null;
                             }
@@ -199,7 +206,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                               padding:
                                   const EdgeInsets.fromLTRB(40, 10, 40, 10),
                               child: Text(
-                                "Register".toUpperCase(),
+                                LocaleKeys.register.tr().toUpperCase(),
                                 style: const TextStyle(
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold,
@@ -211,8 +218,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                               if (_formKey.currentState!.validate()) {
                                 Navigator.of(context).pushAndRemoveUntil(
                                     MaterialPageRoute(
-                                        builder: (context) =>
-                                            const ProfilePage()),
+                                        builder: (context) => ProfilePage()),
                                     (Route<dynamic> route) => false);
                               }
                             },
@@ -221,9 +227,9 @@ class _RegistrationPageState extends State<RegistrationPage> {
                         Container(
                           margin: const EdgeInsets.fromLTRB(10, 20, 10, 20),
                           child: Text.rich(TextSpan(children: [
-                            const TextSpan(text: "Already A Member? "),
+                            TextSpan(text: LocaleKeys.member.tr()),
                             TextSpan(
-                              text: 'Sign In',
+                              text: LocaleKeys.sign.tr(),
                               recognizer: TapGestureRecognizer()
                                 ..onTap = () {
                                   Navigator.push(
@@ -234,7 +240,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                                 },
                               style: const TextStyle(
                                   fontWeight: FontWeight.bold,
-                                  color: const Color.fromARGB(255, 7, 52, 7)),
+                                  color: Color.fromARGB(255, 7, 52, 7)),
                             ),
                           ])),
                         ),
