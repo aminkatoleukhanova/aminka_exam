@@ -6,8 +6,6 @@ part 'app_bloc_state.dart';
 
 class AppBlocBloc extends Bloc<AppBlocEvent, AppBlocState> {
   AppBlocBloc() : super(AppBlocInitial()) {
-    on<AppBlocEvent>((event, emit) {
-      // TODO: implement event handler
-    });
+    on<AppBlocEvent>((event, emit) {});
   }
 }

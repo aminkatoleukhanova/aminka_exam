@@ -10,6 +10,7 @@ class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _ProfilePageState createState() => _ProfilePageState();
 }
 
@@ -60,28 +61,28 @@ class _ProfilePageState extends State<ProfilePage> {
           }),
           items: [
             FlashyTabBarItem(
-              icon: Icon(Icons.newspaper),
-              activeColor: Color.fromARGB(255, 81, 142, 203),
-              inactiveColor: Color.fromARGB(255, 20, 172, 134),
-              title: Text('News'),
+              icon: const Icon(Icons.newspaper),
+              activeColor: const Color.fromARGB(255, 81, 142, 203),
+              inactiveColor: const Color.fromARGB(255, 20, 172, 134),
+              title: const Text('News'),
             ),
             FlashyTabBarItem(
-              icon: Icon(Icons.favorite),
-              activeColor: Color.fromARGB(255, 220, 51, 18),
-              inactiveColor: Color.fromARGB(255, 20, 172, 134),
-              title: Text('Favorite'),
+              icon: const Icon(Icons.favorite),
+              activeColor: const Color.fromARGB(255, 220, 51, 18),
+              inactiveColor: const Color.fromARGB(255, 20, 172, 134),
+              title: const Text('Favorite'),
             ),
             FlashyTabBarItem(
-              icon: Icon(Icons.home),
-              activeColor: Color.fromARGB(255, 5, 51, 20),
-              inactiveColor: Color.fromARGB(255, 20, 172, 134),
-              title: Text('Home'),
+              icon: const Icon(Icons.home),
+              activeColor: const Color.fromARGB(255, 5, 51, 20),
+              inactiveColor: const Color.fromARGB(255, 20, 172, 134),
+              title: const Text('Home'),
             ),
             FlashyTabBarItem(
-              icon: Icon(Icons.person),
-              activeColor: Color.fromARGB(255, 16, 62, 188),
-              inactiveColor: Color.fromARGB(255, 20, 172, 134),
-              title: Text('Profile'),
+              icon: const Icon(Icons.person),
+              activeColor: const Color.fromARGB(255, 16, 62, 188),
+              inactiveColor: const Color.fromARGB(255, 20, 172, 134),
+              title: const Text('Profile'),
             ),
           ],
         ),

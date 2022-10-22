@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use, duplicate_ignore
+
 import 'package:amina_ex/authorization/ui/pages/login_page.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -12,101 +14,132 @@ class AppLocalePage extends StatefulWidget {
 }
 
 class _AppLocalePageState extends State<AppLocalePage> {
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            RaisedButton(
-              onPressed: () async {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const LoginPage()));
-                await context.setLocale(const Locale('kk'));
-              },
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(80.0)),
-              padding: EdgeInsets.all(0.0),
-              child: Ink(
-                decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [Color(0xff374ABE), Color(0xff64B6FF)],
-                      begin: Alignment.centerLeft,
-                      end: Alignment.centerRight,
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            alignment: Alignment.topLeft,
+            image: AssetImage("assets/images/test2.png"),
+          ),
+        ),
+        child: Align(
+          alignment: const Alignment(0.75, 0.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              // ignore: deprecated_member_use
+              RaisedButton(
+                onPressed: () async {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const LoginPage()));
+                  await context.setLocale(const Locale('kk'));
+                },
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(80.0)),
+                padding: const EdgeInsets.all(0.0),
+                child: Ink(
+                  decoration: BoxDecoration(
+                      gradient: const LinearGradient(
+                        colors: [
+                          Color.fromARGB(255, 6, 42, 13),
+                          Color.fromARGB(255, 17, 105, 76)
+                        ],
+                        begin: Alignment.centerLeft,
+                        end: Alignment.centerRight,
+                      ),
+                      borderRadius: BorderRadius.circular(30.0)),
+                  child: Container(
+                    constraints:
+                        const BoxConstraints(maxWidth: 150.0, minHeight: 50.0),
+                    alignment: Alignment.center,
+                    child: const Text(
+                      "🇰🇿 ҚАЗАҚША",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(color: Colors.white),
                     ),
-                    borderRadius: BorderRadius.circular(30.0)),
-                child: Container(
-                  constraints: BoxConstraints(maxWidth: 50.0, minHeight: 50.0),
-                  alignment: Alignment.center,
-                  child: Text(
-                    "KZ",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+                //color: Colors.green,
+              ),
+              // ignore: deprecated_member_use
+              RaisedButton(
+                onPressed: () async {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const LoginPage()));
+                  await context.setLocale(const Locale('en'));
+                },
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(80.0)),
+                padding: const EdgeInsets.all(0.0),
+                child: Ink(
+                  decoration: BoxDecoration(
+                      gradient: const LinearGradient(
+                        colors: [
+                          Color.fromARGB(255, 6, 42, 13),
+                          Color.fromARGB(255, 17, 105, 76)
+                        ],
+                        begin: Alignment.centerLeft,
+                        end: Alignment.centerRight,
+                      ),
+                      borderRadius: BorderRadius.circular(30.0)),
+                  child: Container(
+                    constraints:
+                        const BoxConstraints(maxWidth: 150.0, minHeight: 50.0),
+                    alignment: Alignment.center,
+                    child: const Text(
+                      "🇬🇧 ENGLISH",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(color: Colors.white),
+                    ),
                   ),
                 ),
               ),
-              //color: Colors.green,
-            ),
-            RaisedButton(
-              onPressed: () async {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const LoginPage()));
-                await context.setLocale(Locale('en'));
-              },
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(80.0)),
-              padding: EdgeInsets.all(0.0),
-              child: Ink(
-                decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [Color(0xff374ABE), Color(0xff64B6FF)],
-                      begin: Alignment.centerLeft,
-                      end: Alignment.centerRight,
+              RaisedButton(
+                onPressed: () async {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const LoginPage()));
+                  await context.setLocale(const Locale('ru'));
+                },
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(80.0)),
+                padding: const EdgeInsets.all(0.0),
+                child: Ink(
+                  decoration: BoxDecoration(
+                      gradient: const LinearGradient(
+                        colors: [
+                          Color.fromARGB(255, 6, 42, 13),
+                          Color.fromARGB(255, 17, 105, 76)
+                        ],
+                        begin: Alignment.centerLeft,
+                        end: Alignment.centerRight,
+                      ),
+                      borderRadius: BorderRadius.circular(30.0)),
+                  child: Container(
+                    constraints:
+                        const BoxConstraints(maxWidth: 150.0, minHeight: 50.0),
+                    alignment: Alignment.center,
+                    child: const Text(
+                      "🇷🇺 РУССКИЙ",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(color: Colors.white),
                     ),
-                    borderRadius: BorderRadius.circular(30.0)),
-                child: Container(
-                  constraints: BoxConstraints(maxWidth: 50.0, minHeight: 50.0),
-                  alignment: Alignment.center,
-                  child: Text(
-                    "EN",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(color: Colors.white),
                   ),
                 ),
-              ),
-              //color: Colors.green,
-            ),
-            RaisedButton(
-              onPressed: () async {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const LoginPage()));
-                await context.setLocale(const Locale('ru'));
-              },
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(80.0)),
-              padding: EdgeInsets.all(0.0),
-              child: Ink(
-                decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [Color(0xff374ABE), Color(0xff64B6FF)],
-                      begin: Alignment.centerLeft,
-                      end: Alignment.centerRight,
-                    ),
-                    borderRadius: BorderRadius.circular(30.0)),
-                child: Container(
-                  constraints: BoxConstraints(maxWidth: 50.0, minHeight: 50.0),
-                  alignment: Alignment.center,
-                  child: Text(
-                    "RU",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(color: Colors.white),
-                  ),
-                ),
-              ),
 
-              //color: Colors.green,
-            ),
-          ],
+                //color: Colors.green,
+              ),
+            ],
+          ),
         ),
       ),
     );

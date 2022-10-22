@@ -108,6 +108,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                                 LocaleKeys.entermail.tr()),
                             keyboardType: TextInputType.emailAddress,
                             validator: (val) {
+                              // ignore: prefer_is_not_empty
                               if (!(val!.isEmpty) &&
                                   !RegExp(r"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?)*$")
                                       .hasMatch(val)) {
@@ -125,6 +126,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                                 LocaleKeys.mobile.tr(), "7(XXX)XXX-XX-XX"),
                             keyboardType: TextInputType.phone,
                             validator: (val) {
+                              // ignore: prefer_is_not_empty
                               if (!(val!.isEmpty) &&
                                   !RegExp(r"^(\d+)*$").hasMatch(val)) {
                                 return LocaleKeys.enternum.tr();
@@ -142,6 +144,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                                 LocaleKeys.password.tr(),
                                 LocaleKeys.enterpass.tr()),
                             validator: (val) {
+                              // ignore: prefer_is_not_empty
                               if (!(val!.isEmpty) &&
                                   !RegExp(r"^[a-zA-AaZz-zA-Z0-9]+$")
                                       .hasMatch(val)) {
@@ -218,7 +221,8 @@ class _RegistrationPageState extends State<RegistrationPage> {
                               if (_formKey.currentState!.validate()) {
                                 Navigator.of(context).pushAndRemoveUntil(
                                     MaterialPageRoute(
-                                        builder: (context) => ProfilePage()),
+                                        builder: (context) =>
+                                            const ProfilePage()),
                                     (Route<dynamic> route) => false);
                               }
                             },

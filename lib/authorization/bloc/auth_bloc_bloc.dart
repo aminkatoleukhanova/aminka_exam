@@ -6,8 +6,6 @@ part 'auth_bloc_state.dart';
 
 class AuthBlocBloc extends Bloc<AuthBlocEvent, AuthBlocState> {
   AuthBlocBloc() : super(AuthBlocInitial()) {
-    on<AuthBlocEvent>((event, emit) {
-      // TODO: implement event handler
-    });
+    on<AuthBlocEvent>((event, emit) {});
   }
 }

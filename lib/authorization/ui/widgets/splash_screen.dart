@@ -1,8 +1,7 @@
 import 'dart:async';
 
+import 'package:amina_ex/app/ui/pages/app_locale_select.dart';
 import 'package:flutter/material.dart';
-
-import '../pages/login_page.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key, required this.title}) : super(key: key);
@@ -18,15 +17,15 @@ class _SplashScreenState extends State<SplashScreen> {
   bool _isVisible = false;
 
   _SplashScreenState() {
-    Timer(const Duration(milliseconds: 2000), () {
+    Timer(const Duration(milliseconds: 2500), () {
       setState(() {
         Navigator.of(context).pushAndRemoveUntil(
-            MaterialPageRoute(builder: (context) => const LoginPage()),
+            MaterialPageRoute(builder: (context) => const AppLocalePage()),
             (route) => false);
       });
     });
 
-    Timer(const Duration(milliseconds: 10), () {
+    Timer(const Duration(milliseconds: 120), () {
       setState(() {
         _isVisible =
             true; // Now it is showing fade effect and navigating to Login page
@@ -56,7 +55,7 @@ class _SplashScreenState extends State<SplashScreen> {
       ),
       child: AnimatedOpacity(
         opacity: _isVisible ? 1.0 : 0,
-        duration: const Duration(milliseconds: 1200),
+        duration: const Duration(milliseconds: 1500),
         child: const Center(
           child:
               Center(child: Image(image: AssetImage("assets/images/logo.png"))),

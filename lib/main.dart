@@ -1,6 +1,7 @@
-import 'package:amina_ex/app/ui/pages/app_locale_select.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
+
+import 'authorization/ui/widgets/splash_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -27,7 +28,7 @@ class LoginUiApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const AppLocalePage(),
+      home: const SplashScreen(title: 'Flutter Login UI'),
     );
   }
 }

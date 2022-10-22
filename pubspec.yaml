@@ -41,6 +41,8 @@ dependencies:
   flashy_tab_bar2: ^0.0.4 
   like_button: ^2.0.5
   flutter_circle_color_picker: ^0.3.0
+  country_list_pick: ^1.0.1+6
+
 
 dev_dependencies:
   flutter_test:
@@ -71,6 +73,12 @@ flutter:
   - assets/translations/en.json
   - assets/translations/ru.json
   - assets/translations/kk.json
+  - assets/images/minion.png
+  - assets/images/test2.png
+  - assets/images/test3.png
+
+  
+
  #  - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
