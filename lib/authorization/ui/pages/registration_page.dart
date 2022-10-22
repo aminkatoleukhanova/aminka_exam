@@ -81,31 +81,34 @@ class _RegistrationPageState extends State<RegistrationPage> {
                           height: 30,
                         ),
                         Container(
-                          decoration: ThemeHelper().inputBoxDecorationShaddow(),
+                          decoration: Template().inputBoxDecorationShaddow(),
                           child: TextFormField(
-                            decoration: ThemeHelper().textInputDecoration(
-                                LocaleKeys.first.tr(),
-                                LocaleKeys.enterfirst.tr()),
+                            decoration: InputDecoration(
+                                icon: const Icon(Icons.lock),
+                                labelText: LocaleKeys.first.tr(),
+                                hintText: LocaleKeys.enterfirst.tr()),
                           ),
                         ),
                         const SizedBox(
                           height: 30,
                         ),
                         Container(
-                          decoration: ThemeHelper().inputBoxDecorationShaddow(),
+                          decoration: Template().inputBoxDecorationShaddow(),
                           child: TextFormField(
-                            decoration: ThemeHelper().textInputDecoration(
-                                LocaleKeys.last.tr(),
-                                LocaleKeys.enterlast.tr()),
+                            decoration: InputDecoration(
+                                icon: const Icon(Icons.lock),
+                                labelText: LocaleKeys.last.tr(),
+                                hintText: LocaleKeys.enterlast.tr()),
                           ),
                         ),
                         const SizedBox(height: 20.0),
                         Container(
-                          decoration: ThemeHelper().inputBoxDecorationShaddow(),
+                          decoration: Template().inputBoxDecorationShaddow(),
                           child: TextFormField(
-                            decoration: ThemeHelper().textInputDecoration(
-                                LocaleKeys.address.tr(),
-                                LocaleKeys.entermail.tr()),
+                            decoration: InputDecoration(
+                                icon: const Icon(Icons.lock),
+                                labelText: LocaleKeys.address.tr(),
+                                hintText: LocaleKeys.entermail.tr()),
                             keyboardType: TextInputType.emailAddress,
                             validator: (val) {
                               // ignore: prefer_is_not_empty
@@ -120,10 +123,12 @@ class _RegistrationPageState extends State<RegistrationPage> {
                         ),
                         const SizedBox(height: 20.0),
                         Container(
-                          decoration: ThemeHelper().inputBoxDecorationShaddow(),
+                          decoration: Template().inputBoxDecorationShaddow(),
                           child: TextFormField(
-                            decoration: ThemeHelper().textInputDecoration(
-                                LocaleKeys.mobile.tr(), "7(XXX)XXX-XX-XX"),
+                            decoration: InputDecoration(
+                                icon: const Icon(Icons.lock),
+                                labelText: LocaleKeys.mobile.tr(),
+                                hintText: "7(XXX)XXX-XX-XX"),
                             keyboardType: TextInputType.phone,
                             validator: (val) {
                               // ignore: prefer_is_not_empty
@@ -137,12 +142,13 @@ class _RegistrationPageState extends State<RegistrationPage> {
                         ),
                         const SizedBox(height: 20.0),
                         Container(
-                          decoration: ThemeHelper().inputBoxDecorationShaddow(),
+                          decoration: Template().inputBoxDecorationShaddow(),
                           child: TextFormField(
                             obscureText: true,
-                            decoration: ThemeHelper().textInputDecoration(
-                                LocaleKeys.password.tr(),
-                                LocaleKeys.enterpass.tr()),
+                            decoration: InputDecoration(
+                                icon: const Icon(Icons.lock),
+                                labelText: LocaleKeys.password.tr(),
+                                hintText: LocaleKeys.enterpass.tr()),
                             validator: (val) {
                               // ignore: prefer_is_not_empty
                               if (!(val!.isEmpty) &&
@@ -201,10 +207,9 @@ class _RegistrationPageState extends State<RegistrationPage> {
                         ),
                         const SizedBox(height: 20.0),
                         Container(
-                          decoration:
-                              ThemeHelper().buttonBoxDecoration(context),
+                          decoration: Template().buttonBoxDecoration(context),
                           child: ElevatedButton(
-                            style: ThemeHelper().buttonStyle(),
+                            style: Template().buttonStyle(),
                             child: Padding(
                               padding:
                                   const EdgeInsets.fromLTRB(40, 10, 40, 10),

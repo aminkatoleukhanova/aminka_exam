@@ -20,14 +20,14 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 134, 190, 136),
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
           children: [
             SizedBox(
               height: _headerHeight,
               child: const Center(
-                  child: Image(image: AssetImage("assets/images/uib2.png"))),
+                  child: Image(image: AssetImage("assets/images/logo.png"))),
             ),
             SafeArea(
               child: Container(
@@ -50,25 +50,60 @@ class _LoginPageState extends State<LoginPage> {
                           key: _formKey,
                           child: Column(
                             children: [
-                              Container(
-                                decoration:
-                                    ThemeHelper().inputBoxDecorationShaddow(),
-                                child: TextField(
-                                  decoration: ThemeHelper().textInputDecoration(
-                                      LocaleKeys.barcode.tr(),
-                                      LocaleKeys.enterbar.tr()),
+                              TextField(
+                                decoration: InputDecoration(
+                                  labelText: LocaleKeys.barcode.tr(),
+                                  hintText: LocaleKeys.enterbar.tr(),
+                                  prefixIcon: const Icon(
+                                    Icons.person,
+                                    color: Color.fromARGB(255, 12, 86, 50),
+                                  ),
+                                  focusedBorder: OutlineInputBorder(
+                                      borderRadius:
+                                          BorderRadius.circular(100.0),
+                                      borderSide: const BorderSide(
+                                          color: Color.fromARGB(
+                                              255, 22, 34, 102))),
+                                  enabledBorder: OutlineInputBorder(
+                                      borderRadius:
+                                          BorderRadius.circular(100.0),
+                                      borderSide: const BorderSide(
+                                          color:
+                                              Color.fromARGB(255, 8, 76, 43))),
+                                  errorBorder: OutlineInputBorder(
+                                      borderRadius:
+                                          BorderRadius.circular(100.0),
+                                      borderSide:
+                                          const BorderSide(color: Colors.red)),
                                 ),
                               ),
-                              const SizedBox(height: 30.0),
-                              Container(
-                                decoration:
-                                    ThemeHelper().inputBoxDecorationShaddow(),
-                                child: TextField(
-                                  obscureText: true,
-                                  decoration: ThemeHelper().textInputDecoration(
-                                    LocaleKeys.password.tr(),
-                                    LocaleKeys.enterpass.tr(),
+                              const SizedBox(height: 20.0),
+                              TextField(
+                                obscureText: true,
+                                decoration: InputDecoration(
+                                  prefixIcon: const Icon(
+                                    Icons.lock,
+                                    color: Color.fromARGB(255, 12, 86, 50),
                                   ),
+                                  labelText: LocaleKeys.password.tr(),
+                                  hintText: LocaleKeys.enterpass.tr(),
+                                  focusedBorder: OutlineInputBorder(
+                                      borderRadius:
+                                          BorderRadius.circular(100.0),
+                                      borderSide: const BorderSide(
+                                          color: Color.fromARGB(
+                                              255, 22, 34, 102))),
+                                  enabledBorder: OutlineInputBorder(
+                                      borderRadius:
+                                          BorderRadius.circular(100.0),
+                                      borderSide: const BorderSide(
+                                          color:
+                                              Color.fromARGB(255, 8, 76, 43))),
+                                  errorBorder: OutlineInputBorder(
+                                      borderRadius:
+                                          BorderRadius.circular(100.0),
+                                      borderSide:
+                                          const BorderSide(color: Colors.red)),
                                 ),
                               ),
                               const SizedBox(height: 15.0),
@@ -88,9 +123,9 @@ class _LoginPageState extends State<LoginPage> {
                               ),
                               Container(
                                 decoration:
-                                    ThemeHelper().buttonBoxDecoration(context),
+                                    Template().buttonBoxDecoration(context),
                                 child: ElevatedButton(
-                                  style: ThemeHelper().buttonStyle(),
+                                  style: Template().buttonStyle(),
                                   child: Padding(
                                     padding: const EdgeInsets.fromLTRB(
                                         40, 10, 40, 10),
