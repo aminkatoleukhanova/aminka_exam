@@ -1,7 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:amina_ex/components/style.dart';
 import '../../../translations/locale_keys.g.dart';
 import 'registration_page.dart';
 
@@ -27,7 +26,7 @@ class _LoginPageState extends State<LoginPage> {
             SizedBox(
               height: _headerHeight,
               child: const Center(
-                  child: Image(image: AssetImage("assets/images/logo.png"))),
+                  child: Image(image: AssetImage("assets/images/123.png"))),
             ),
             SafeArea(
               child: Container(
@@ -92,7 +91,7 @@ class _LoginPageState extends State<LoginPage> {
                                           BorderRadius.circular(100.0),
                                       borderSide: const BorderSide(
                                           color: Color.fromARGB(
-                                              255, 22, 34, 102))),
+                                              255, 22, 102, 51))),
                                   enabledBorder: OutlineInputBorder(
                                       borderRadius:
                                           BorderRadius.circular(100.0),
@@ -122,22 +121,31 @@ class _LoginPageState extends State<LoginPage> {
                                 ),
                               ),
                               Container(
-                                decoration:
-                                    Template().buttonBoxDecoration(context),
-                                child: ElevatedButton(
-                                  style: Template().buttonStyle(),
-                                  child: Padding(
-                                    padding: const EdgeInsets.fromLTRB(
-                                        40, 10, 40, 10),
-                                    child: Text(
-                                      LocaleKeys.sign.tr().toUpperCase(),
-                                      style: const TextStyle(
-                                          fontSize: 20,
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.white),
-                                    ),
-                                  ),
-                                  onPressed: () {},
+                                width: MediaQuery.of(context).size.width,
+                                padding:
+                                    const EdgeInsets.symmetric(vertical: 15),
+                                alignment: Alignment.center,
+                                decoration: BoxDecoration(
+                                    borderRadius: const BorderRadius.all(
+                                        Radius.circular(5)),
+                                    boxShadow: <BoxShadow>[
+                                      BoxShadow(
+                                          color: Colors.grey.shade200,
+                                          offset: const Offset(2, 4),
+                                          blurRadius: 5,
+                                          spreadRadius: 2)
+                                    ],
+                                    gradient: const LinearGradient(
+                                        begin: Alignment.centerLeft,
+                                        end: Alignment.centerRight,
+                                        colors: [
+                                          Color.fromARGB(255, 9, 55, 39),
+                                          Color.fromARGB(255, 20, 108, 52)
+                                        ])),
+                                child: Text(
+                                  LocaleKeys.sign.tr().toUpperCase(),
+                                  style: const TextStyle(
+                                      fontSize: 20, color: Colors.white),
                                 ),
                               ),
                               Container(

@@ -34,7 +34,7 @@ class _ProfilePageState extends State<ProfilePage> {
       home: Scaffold(
         appBar: AppBar(
           title: const Text(
-            "Profile Page",
+            "Home",
             style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
           ),
           flexibleSpace: Container(
@@ -44,8 +44,14 @@ class _ProfilePageState extends State<ProfilePage> {
                     end: Alignment.bottomRight,
                     // ignore: prefer_const_literals_to_create_immutables
                     colors: <Color>[
+                  Color.fromRGBO(0, 122, 83, 1),
+                  Color.fromRGBO(0, 122, 83, 0.96),
+                  Color.fromRGBO(0, 122, 83, 0.92),
+                  Color.fromRGBO(1, 116, 84, 0.95),
+                  Color.fromRGBO(3, 107, 86, 1),
+                  Color.fromRGBO(4, 104, 86, 1),
                   Color.fromRGBO(4, 101, 87, 1),
-                  Color.fromARGB(255, 134, 190, 136),
+                  Color.fromRGBO(6, 93, 88, 1),
                 ])),
           ),
         ),
@@ -62,26 +68,26 @@ class _ProfilePageState extends State<ProfilePage> {
           items: [
             FlashyTabBarItem(
               icon: const Icon(Icons.newspaper),
-              activeColor: const Color.fromARGB(255, 81, 142, 203),
-              inactiveColor: const Color.fromARGB(255, 20, 172, 134),
+              activeColor: const Color.fromARGB(255, 28, 148, 130),
+              inactiveColor: const Color.fromARGB(255, 8, 76, 52),
               title: const Text('News'),
             ),
             FlashyTabBarItem(
-              icon: const Icon(Icons.favorite),
-              activeColor: const Color.fromARGB(255, 220, 51, 18),
-              inactiveColor: const Color.fromARGB(255, 20, 172, 134),
+              icon: const Icon(Icons.qr_code),
+              activeColor: const Color.fromARGB(255, 28, 148, 130),
+              inactiveColor: const Color.fromARGB(255, 8, 76, 52),
               title: const Text('Favorite'),
             ),
             FlashyTabBarItem(
               icon: const Icon(Icons.home),
-              activeColor: const Color.fromARGB(255, 5, 51, 20),
-              inactiveColor: const Color.fromARGB(255, 20, 172, 134),
+              activeColor: const Color.fromARGB(255, 28, 148, 130),
+              inactiveColor: const Color.fromARGB(255, 8, 76, 52),
               title: const Text('Home'),
             ),
             FlashyTabBarItem(
               icon: const Icon(Icons.person),
-              activeColor: const Color.fromARGB(255, 16, 62, 188),
-              inactiveColor: const Color.fromARGB(255, 20, 172, 134),
+              activeColor: const Color.fromARGB(255, 28, 148, 130),
+              inactiveColor: const Color.fromARGB(255, 8, 76, 52),
               title: const Text('Profile'),
             ),
           ],

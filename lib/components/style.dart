@@ -5,7 +5,7 @@ class Template {
   BoxDecoration inputBoxDecorationShaddow() {
     return BoxDecoration(boxShadow: [
       BoxShadow(
-        color: Colors.black.withOpacity(0.1),
+        color: const Color.fromARGB(255, 13, 82, 65).withOpacity(0.1),
         blurRadius: 20,
         offset: const Offset(0, 5),
       )
@@ -25,7 +25,10 @@ class Template {
 
     return BoxDecoration(
       boxShadow: const [
-        BoxShadow(color: Colors.black26, offset: Offset(0, 4), blurRadius: 5.0)
+        BoxShadow(
+            color: Color.fromARGB(66, 4, 70, 38),
+            offset: Offset(0, 4),
+            blurRadius: 5.0)
       ],
       gradient: LinearGradient(
         begin: Alignment.topLeft,
@@ -49,8 +52,10 @@ class Template {
         ),
       ),
       minimumSize: MaterialStateProperty.all(const Size(50, 50)),
-      backgroundColor: MaterialStateProperty.all(Colors.transparent),
-      shadowColor: MaterialStateProperty.all(Colors.transparent),
+      backgroundColor:
+          MaterialStateProperty.all(const Color.fromARGB(0, 20, 99, 71)),
+      shadowColor:
+          MaterialStateProperty.all(const Color.fromARGB(0, 16, 106, 67)),
     );
   }
 
