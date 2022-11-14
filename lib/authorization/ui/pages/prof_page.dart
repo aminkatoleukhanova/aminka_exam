@@ -1,17 +1,22 @@
-import 'package:flutter/cupertino.dart';
+import 'package:amina_ex/authorization/ui/widgets/user.dart';
 import 'package:flutter/material.dart';
 
 class ProfPage extends StatefulWidget {
   const ProfPage({super.key});
+
   @override
   State<ProfPage> createState() => _ProfPageState();
 }
 
 class _ProfPageState extends State<ProfPage> {
-  get buttonSize => null;
-
+  late final User userInfo;
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('User Info'),
+        centerTitle: true,
+      ),
+    );
   }
 }

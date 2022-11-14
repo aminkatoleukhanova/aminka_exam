@@ -1,4 +1,5 @@
 import 'package:amina_ex/authorization/ui/pages/QR_page1.dart';
+import 'package:amina_ex/authorization/ui/pages/map_page.dart';
 import 'package:amina_ex/authorization/ui/pages/news_page.dart';
 import 'package:amina_ex/authorization/ui/pages/home_page.dart';
 import 'package:amina_ex/authorization/ui/pages/prof_page.dart';
@@ -18,8 +19,9 @@ class _ProfilePageState extends State<ProfilePage> {
   final tabItems = [
     const HomePage(),
     const QrPage(),
-    const ProfPage(),
     const NewsPage(),
+    const ProfPage(),
+    const MapPage()
   ];
 
   @override
@@ -64,6 +66,12 @@ class _ProfilePageState extends State<ProfilePage> {
             activeColor: const Color.fromARGB(255, 28, 148, 130),
             inactiveColor: const Color.fromARGB(255, 8, 76, 52),
             title: const Text('Profile'),
+          ),
+          FlashyTabBarItem(
+            icon: const Icon(Icons.map),
+            activeColor: const Color.fromARGB(255, 28, 148, 130),
+            inactiveColor: const Color.fromARGB(255, 8, 76, 52),
+            title: const Text('Map'),
           ),
         ],
       ),

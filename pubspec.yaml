@@ -43,6 +43,12 @@ dependencies:
   flutter_circle_color_picker: ^0.3.0
   country_list_pick: ^1.0.1+6
   qr_code_scanner: ^1.0.1
+  http: ^0.13.5
+  page_indicator: ^0.4.1
+  flutter_polyline_points: ^1.0.0
+  google_maps_flutter: ^2.2.1
+  location: ^4.4.0
+  flutter_svg: ^1.1.0
 
 
 
@@ -70,16 +76,13 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-  - assets/images/logo.png
-  - assets/images/uib2.png
+  - assets/images/
+  - assets/icons/
   - assets/translations/en.json
   - assets/translations/ru.json
   - assets/translations/kk.json
-  - assets/images/minion.png
-  - assets/images/test2.png
-  - assets/images/test3.png
-  - assets/images/123.png
-  
+
+
 
  #  - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
