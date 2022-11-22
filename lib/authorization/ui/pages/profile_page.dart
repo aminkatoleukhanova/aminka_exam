@@ -3,6 +3,8 @@ import 'package:amina_ex/authorization/ui/pages/map_page.dart';
 import 'package:amina_ex/authorization/ui/pages/news_page.dart';
 import 'package:amina_ex/authorization/ui/pages/home_page.dart';
 import 'package:amina_ex/authorization/ui/pages/prof_page.dart';
+import 'package:amina_ex/authorization/ui/pages/testpage.dart';
+import 'package:amina_ex/authorization/ui/widgets/user.dart';
 import 'package:flashy_tab_bar2/flashy_tab_bar2.dart';
 import 'package:flutter/material.dart';
 
@@ -17,12 +19,14 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   int _selectedIndex = 0;
   final tabItems = [
-    const HomePage(),
-    const QrPage(),
     const NewsPage(),
-    const ProfPage(),
-    const MapPage()
+    const QrPage(),
+    const HomePage(),
+    const MapPage(),
+    const Test()
   ];
+
+  User newUse = User();
 
   @override
   void initState() {
@@ -44,10 +48,10 @@ class _ProfilePageState extends State<ProfilePage> {
         }),
         items: [
           FlashyTabBarItem(
-            icon: const Icon(Icons.home),
+            icon: const Icon(Icons.newspaper),
             activeColor: const Color.fromARGB(255, 28, 148, 130),
             inactiveColor: const Color.fromARGB(255, 8, 76, 52),
-            title: const Text('Home'),
+            title: const Text('News'),
           ),
           FlashyTabBarItem(
             icon: const Icon(Icons.qr_code),
@@ -56,22 +60,22 @@ class _ProfilePageState extends State<ProfilePage> {
             title: const Text('QR'),
           ),
           FlashyTabBarItem(
-            icon: const Icon(Icons.newspaper),
+            icon: const Icon(Icons.home),
             activeColor: const Color.fromARGB(255, 28, 148, 130),
             inactiveColor: const Color.fromARGB(255, 8, 76, 52),
-            title: const Text('News'),
-          ),
-          FlashyTabBarItem(
-            icon: const Icon(Icons.person),
-            activeColor: const Color.fromARGB(255, 28, 148, 130),
-            inactiveColor: const Color.fromARGB(255, 8, 76, 52),
-            title: const Text('Profile'),
+            title: const Text('Home'),
           ),
           FlashyTabBarItem(
             icon: const Icon(Icons.map),
             activeColor: const Color.fromARGB(255, 28, 148, 130),
             inactiveColor: const Color.fromARGB(255, 8, 76, 52),
             title: const Text('Map'),
+          ),
+          FlashyTabBarItem(
+            icon: const Icon(Icons.person),
+            activeColor: const Color.fromARGB(255, 28, 148, 130),
+            inactiveColor: const Color.fromARGB(255, 8, 76, 52),
+            title: const Text('Profile'),
           ),
         ],
       ),

@@ -14,28 +14,11 @@ class AuthRepository {
         Uri.parse("http://10.0.2.2:3000/aminka"),
         body: convert.jsonEncode({
           'username': event.username,
+          'password': event.password,
         }),
       );
       emit(LoadedAuthState());
-    } catch (_) {
-      emit(FailureLoginState());
-    }
-  }
-}
-
-class AuthRepository2 {
-  Future<void> onGetAuthEvent2(
-      GetAuthEvent2 event, Emitter<AuthBlocState> emit) async {
-    Response response;
-    emit(LoadingAuthState());
-    try {
-      response = await http.post(
-        Uri.parse("http://10.0.2.2:3000/aminka"),
-        body: convert.jsonEncode({
-          'username': event.password,
-        }),
-      );
-      emit(LoadedAuthState());
+      print(response.body);
     } catch (_) {
       emit(FailureLoginState());
     }

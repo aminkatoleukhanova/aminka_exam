@@ -1,20 +1,19 @@
+import 'dart:convert';
 import 'dart:developer';
-
-import 'package:amina_ex/authorization/ui/pages/profile_page.dart';
+import 'package:amina_ex/authorization/ui/pages/prof_page.dart';
+import 'package:http/http.dart' as http;
 import 'package:amina_ex/authorization/ui/widgets/user.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
+import 'package:lottie/lottie.dart';
 import '../../../translations/locale_keys.g.dart';
 
 class RegistrationPage extends StatefulWidget {
-  const RegistrationPage({Key? key}) : super(key: key);
+  const RegistrationPage({super.key});
 
   @override
-  State<StatefulWidget> createState() {
-    return _RegistrationPageState();
-  }
+  State<StatefulWidget> createState() => _RegistrationPageState();
 }
 
 class _RegistrationPageState extends State<RegistrationPage> {
@@ -85,10 +84,12 @@ class _RegistrationPageState extends State<RegistrationPage> {
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
-        title: Text(
-          LocaleKeys.register.tr(),
-          style:
-              const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        title: Center(
+          child: Text(
+            LocaleKeys.register.tr(),
+            style: const TextStyle(
+                color: Colors.white, fontWeight: FontWeight.bold),
+          ),
         ),
         flexibleSpace: Container(
           decoration: const BoxDecoration(
@@ -97,7 +98,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   end: Alignment.bottomRight,
                   // ignore: prefer_const_literals_to_create_immutables
                   colors: <Color>[
-                Color.fromARGB(255, 17, 105, 76),
+                Color.fromARGB(255, 9, 75, 53),
                 Color.fromARGB(255, 6, 42, 13),
               ])),
         ),
@@ -107,9 +108,12 @@ class _RegistrationPageState extends State<RegistrationPage> {
         child: ListView(
           padding: const EdgeInsets.all(16.0),
           children: [
+            Center(
+              child: Lottie.asset("assets/animation/hat.json", width: 200),
+            ),
             TextFormField(
               focusNode: _nameFocus,
-              autofocus: true,
+              autofocus: false,
               onFieldSubmitted: (_) {
                 _fieldFocusChange(context, _nameFocus, _mailFocus);
               },
@@ -127,16 +131,18 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   },
                   child: const Icon(
                     Icons.close,
-                    color: Colors.red,
+                    color: Colors.orange,
                   ),
                 ),
                 enabledBorder: const OutlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(20.0)),
-                  borderSide: BorderSide(color: Colors.black, width: 2.0),
+                  borderRadius: BorderRadius.all(Radius.circular(100.0)),
+                  borderSide: BorderSide(
+                      color: Color.fromARGB(255, 22, 102, 51), width: 1.0),
                 ),
                 focusedBorder: const OutlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(20.0)),
-                  borderSide: BorderSide(color: Colors.blue, width: 2.0),
+                  borderRadius: BorderRadius.all(Radius.circular(100.0)),
+                  borderSide: BorderSide(
+                      color: Color.fromARGB(255, 38, 178, 155), width: 1.0),
                 ),
               ),
               validator: validateName,
@@ -162,16 +168,17 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   },
                   child: const Icon(
                     Icons.close,
-                    color: Colors.red,
+                    color: Colors.orange,
                   ),
                 ),
                 enabledBorder: const OutlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(20.0)),
-                  borderSide: BorderSide(color: Colors.black, width: 2.0),
+                  borderRadius: BorderRadius.all(Radius.circular(100.0)),
+                  borderSide: BorderSide(color: Colors.black, width: 1.0),
                 ),
                 focusedBorder: const OutlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(20.0)),
-                  borderSide: BorderSide(color: Colors.blue, width: 2.0),
+                  borderRadius: BorderRadius.all(Radius.circular(100.0)),
+                  borderSide: BorderSide(
+                      color: Color.fromARGB(255, 38, 178, 155), width: 1.0),
                 ),
               ),
               validator: validateEmail,
@@ -186,7 +193,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
               controller: _phoneController,
               decoration: InputDecoration(
                 labelText: LocaleKeys.mobile.tr(),
-                hintText: '(XXX)XXX-XXXX',
+                hintText: '8(7хх)-ххх-хххх',
                 prefixIcon: const Icon(
                   Icons.call,
                   color: Color.fromARGB(255, 12, 86, 50),
@@ -197,21 +204,22 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   },
                   child: const Icon(
                     Icons.close,
-                    color: Colors.red,
+                    color: Colors.orange,
                   ),
                 ),
                 enabledBorder: const OutlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(20.0)),
-                  borderSide: BorderSide(color: Colors.black, width: 2.0),
+                  borderRadius: BorderRadius.all(Radius.circular(100.0)),
+                  borderSide: BorderSide(color: Colors.black, width: 1.0),
                 ),
                 focusedBorder: const OutlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(20.0)),
-                  borderSide: BorderSide(color: Colors.blue, width: 2.0),
+                  borderRadius: BorderRadius.all(Radius.circular(100.0)),
+                  borderSide: BorderSide(
+                      color: Color.fromARGB(255, 38, 178, 155), width: 1.0),
                 ),
               ),
               keyboardType: TextInputType.phone,
               inputFormatters: [
-                FilteringTextInputFormatter(RegExp(r'^[()\d -]{1,15}$'),
+                FilteringTextInputFormatter(RegExp(r'^[8()\d -]{1,15}$'),
                     allow: true),
               ],
               validator: (value) =>
@@ -350,8 +358,8 @@ class _RegistrationPageState extends State<RegistrationPage> {
               child: ElevatedButton(
                 onPressed: _submitForm,
                 style: ElevatedButton.styleFrom(
-                  primary: const Color.fromARGB(255, 9, 55, 39),
-                  onPrimary: const Color.fromARGB(255, 20, 108, 52),
+                  foregroundColor: const Color.fromARGB(255, 20, 108, 52),
+                  backgroundColor: const Color.fromARGB(255, 9, 55, 39),
                 ),
                 child: Padding(
                   padding: const EdgeInsets.fromLTRB(40, 10, 40, 10),
@@ -376,12 +384,14 @@ class _RegistrationPageState extends State<RegistrationPage> {
   void _submitForm() {
     if (_formKey.currentState!.validate()) {
       _formKey.currentState!.save();
+
       _showDialog(name: _nameController.text);
       log('Name: ${_nameController.text}');
       log('Phone: ${_phoneController.text}');
       log('Email: ${_emailController.text}');
       log('Country: $_selectedCountry');
-      log('Story: ${_storyController.text}');
+      log('Gender: $_selectedGender');
+      log('Speciality: $_selectedSpeciality');
     } else {
       _showMessage(message: 'Form is not valid! Please review and correct');
     }
@@ -399,7 +409,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
   }
 
   bool validatePhoneNumber(String input) {
-    final phoneExp = RegExp(r'^\d\d\d\d\d\d\d\d\d\d$');
+    final phoneExp = RegExp(r'^8\d\d\d\d\d\d\d\d\d\d$');
     return phoneExp.hasMatch(input);
   }
 
@@ -465,7 +475,9 @@ class _RegistrationPageState extends State<RegistrationPage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const ProfilePage(),
+                    builder: (context) => UserInfoPage(
+                      userInfo: newUser,
+                    ),
                   ),
                 );
               },

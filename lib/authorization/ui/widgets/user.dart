@@ -5,5 +5,4 @@ class User {
   late String country;
   late String gender;
   late String speciality;
-  late String story;
 }

@@ -1,5 +1,3 @@
-// ignore_for_file: deprecated_member_use, duplicate_ignore
-
 import 'package:amina_ex/authorization/ui/pages/login_page.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -16,22 +14,24 @@ class AppLocalePage extends StatefulWidget {
 class _AppLocalePageState extends State<AppLocalePage> {
   @override
   Widget build(BuildContext context) {
+    final ButtonStyle style = ElevatedButton.styleFrom(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(80.0)),
+      padding: const EdgeInsets.all(0.0),
+    );
     return Scaffold(
       body: Container(
         alignment: Alignment.center,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // ignore: deprecated_member_use
-            RaisedButton(
+            ElevatedButton(
+              style: style,
               onPressed: () async {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => const LoginPage()));
                 await context.setLocale(const Locale('kk'));
               },
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(80.0)),
-              padding: const EdgeInsets.all(0.0),
+
               child: Ink(
                 decoration: BoxDecoration(
                     gradient: const LinearGradient(
@@ -55,17 +55,13 @@ class _AppLocalePageState extends State<AppLocalePage> {
               //color: Colors.green,
             ),
             const SizedBox(height: 3),
-
-            // ignore: deprecated_member_use
-            RaisedButton(
+            ElevatedButton(
+              style: style,
               onPressed: () async {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => const LoginPage()));
                 await context.setLocale(const Locale('en'));
               },
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(80.0)),
-              padding: const EdgeInsets.all(0.0),
               child: Ink(
                 decoration: BoxDecoration(
                     gradient: const LinearGradient(
@@ -88,16 +84,14 @@ class _AppLocalePageState extends State<AppLocalePage> {
               ),
             ),
             const SizedBox(height: 3),
-
-            RaisedButton(
+            ElevatedButton(
+              style: style,
               onPressed: () async {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => const LoginPage()));
                 await context.setLocale(const Locale('ru'));
               },
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(80.0)),
-              padding: const EdgeInsets.all(0.0),
+
               child: Ink(
                 decoration: BoxDecoration(
                     gradient: const LinearGradient(

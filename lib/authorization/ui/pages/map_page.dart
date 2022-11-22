@@ -1,5 +1,3 @@
-import 'package:amina_ex/authorization/ui/pages/map/order_traking_page.dart';
-import 'package:amina_ex/authorization/ui/widgets/user.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:amina_ex/authorization/ui/pages/map/constants.dart';

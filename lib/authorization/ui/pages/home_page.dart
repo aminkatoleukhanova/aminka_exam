@@ -30,6 +30,10 @@ class _HomePageState extends State<HomePage> {
   int counter = 0;
   @override
   Widget build(BuildContext context) {
+    final ButtonStyle style = ElevatedButton.styleFrom(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(80.0)),
+      padding: const EdgeInsets.all(0.0),
+    );
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -69,18 +73,16 @@ class _HomePageState extends State<HomePage> {
                 length: 4,
                 indicatorSpace: 10.0,
                 child: PageView(
-                  // ignore: sort_child_properties_last
                   children: <Widget>[
-                    RaisedButton(
+                    ElevatedButton(
+                      style: style,
                       onPressed: () async {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
                                 builder: (context) => const NewsPage()));
                       },
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(80.0)),
-                      padding: const EdgeInsets.all(0.0),
+
                       child: Ink(
                         decoration: BoxDecoration(
                             gradient: const LinearGradient(
@@ -97,23 +99,22 @@ class _HomePageState extends State<HomePage> {
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(20.0),
                             child: Image.asset(
-                              "assets/images/logo.png",
+                              "assets/images/123.png",
                             ),
                           ),
                         ),
                       ),
                       //color: Colors.green,
                     ),
-                    RaisedButton(
+                    ElevatedButton(
+                      style: style,
                       onPressed: () async {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
                                 builder: (context) => const NewsPage()));
                       },
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(80.0)),
-                      padding: const EdgeInsets.all(0.0),
+
                       child: Ink(
                         decoration: BoxDecoration(
                             gradient: const LinearGradient(
@@ -137,16 +138,15 @@ class _HomePageState extends State<HomePage> {
                       ),
                       //color: Colors.green,
                     ),
-                    RaisedButton(
+                    ElevatedButton(
+                      style: style,
                       onPressed: () async {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
                                 builder: (context) => const NewsPage()));
                       },
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(80.0)),
-                      padding: const EdgeInsets.all(0.0),
+
                       child: Ink(
                         decoration: BoxDecoration(
                             gradient: const LinearGradient(
@@ -170,16 +170,15 @@ class _HomePageState extends State<HomePage> {
                       ),
                       //color: Colors.green,
                     ),
-                    RaisedButton(
+                    ElevatedButton(
+                      style: style,
                       onPressed: () async {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
                                 builder: (context) => const NewsPage()));
                       },
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(80.0)),
-                      padding: const EdgeInsets.all(0.0),
+
                       child: Ink(
                         decoration: BoxDecoration(
                             gradient: const LinearGradient(

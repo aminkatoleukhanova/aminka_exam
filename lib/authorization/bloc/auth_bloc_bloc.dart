@@ -7,10 +7,8 @@ part 'auth_bloc_state.dart';
 
 class AuthBlocBloc extends Bloc<AuthBlocEvent, AuthBlocState> {
   final _repository = AuthRepository();
-  final _repository2 = AuthRepository2();
   AuthBlocBloc() : super(AuthBlocInitial()) {
     on<AuthBlocEvent>((event, emit) => emit(AuthBlocInitial()));
     on<GetAuthEvent>(_repository.onGetAuthEvent);
-    on<GetAuthEvent2>(_repository2.onGetAuthEvent2);
   }
 }
